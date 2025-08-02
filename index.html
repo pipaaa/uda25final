@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UDA25 - Pipaon Esperientziak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at top left, #000428, #004e92);
+      color: #fff;
+      overflow-x: hidden;
+      animation: bgAnim 20s linear infinite alternate;
+    }
+
+    @keyframes bgAnim {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    header {
+      position: relative;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 90deg at 50% 50%, #f5af19, #f12711, #f5af19);
+      animation: rotateBg 15s linear infinite;
+      z-index: 0;
+      opacity: 0.1;
+    }
+
+    @keyframes rotateBg {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      height: 80px;
+      animation: floatLogo 4s ease-in-out infinite;
+    }
+
+    .banner {
+      width: 90%;
+      max-height: 200px;
+      object-fit: contain;
+      animation: bounceBanner 6s infinite ease-in-out;
+    }
+
+    @keyframes floatLogo {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes bounceBanner {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    main {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+      background: linear-gradient(to right, #ff7300, #f5af19);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse 1.5s infinite;
+      text-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .pdf-container {
+      width: 95%;
+      max-width: 1000px;
+      height: 85vh;
+      border: 4px solid #f5af19;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+      position: relative;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 15px #f5af19; }
+      50% { box-shadow: 0 0 30px #ff7300; }
+      100% { box-shadow: 0 0 15px #f5af19; }
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 2rem;
+      text-align: center;
+      font-size: 1rem;
+      background: #000000cc;
+      border-top: 2px solid #f5af19;
+      color: #eee;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        height: 60px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .pdf-container {
+        height: 70vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        height: 50px;
+      }
+
+      .banner {
+        max-height: 120px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .pdf-container {
+        height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo Pipaon" class="logo" />
+      <img src="logologo.png" alt="Banner Pipaon Esperientziak" class="banner" />
+    </div>
+  </header>
+  <main>
+    <h1>UDA25</h1>
+    <div class="pdf-container">
+      <iframe src="versionultima.pdf#toolbar=0&navpanes=0&scrollbar=0" allowfullscreen></iframe>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Pipaon Esperientziak - Proyecto UDA25. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
